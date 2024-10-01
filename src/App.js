@@ -1,11 +1,11 @@
-import * as React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import * as React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 
-import { CartProvider } from "./state/context/CartContext.tsx";
-import HomePage from "./pages/HomePage.tsx";
-import ProductList from "./features/ProductList/ProductList.tsx";
-import CartPage from "./pages/CartPage.tsx";
+import { CartProvider } from './state/context/CartContext.tsx';
+import HomePage from './pages/HomePage.tsx';
+import CartPage from './pages/CartPage.tsx';
+import ProductPage from './pages/ProductPage.tsx';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/products" element={<ProductList />} />
+              <Route path="/products" element={<ProductPage />} />
               <Route path="/cart" element={<CartPage />} />
             </Routes>
           </Router>

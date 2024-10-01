@@ -1,5 +1,7 @@
 import React from "react";
-import { Card, CardBody, CardFooter, Stack, Heading, Image, Text, Divider, ButtonGroup, Button } from '@chakra-ui/react';
+import { Card, CardBody, CardFooter, Stack, Heading, Image, Text, Divider, ButtonGroup, Button, Flex, IconButton } from '@chakra-ui/react';
+import { IoMdAdd } from "react-icons/io";
+import { FaRegHeart } from "react-icons/fa";
 
 interface ProductCardProps {
   title: string;
@@ -31,14 +33,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, description, price, im
       </CardBody>
       <Divider />
       <CardFooter>
-        <ButtonGroup spacing='2'>
-          <Button variant='solid' colorScheme='blue' onClick={onBuy}>
-            Buy now
-          </Button>
-          <Button variant='outline' colorScheme='blue' onClick={onAddToCart}>
-            Add to cart
-          </Button>
-        </ButtonGroup>
+        <Flex w="100%" justify="flex-end">
+          <ButtonGroup spacing='2'>
+            <Button variant='solid' colorScheme='blue' onClick={onBuy}>
+              +
+            </Button>
+            <IconButton aria-label='Add to wishlist' icon={<FaRegHeart />} onClick={onAddToCart} />
+          </ButtonGroup>
+        </Flex>
       </CardFooter>
     </Card>
   );
