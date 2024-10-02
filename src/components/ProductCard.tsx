@@ -28,16 +28,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, description, price, im
       <CardFooter>
         <Flex w="100%" justify="flex-end">
           <ButtonGroup spacing="2">
-            <Button variant="solid" colorScheme="blue" onClick={onAddToCart}>
-              +
+            <Button variant="outline"  size='sm' onClick={onAddToCart}>
+              Add to Basket
             </Button>
+            <Button  size='sm' onClick={onOpen}>Details</Button>
             <IconButton
               aria-label="Toggle wishlist"
               icon={<FaRegHeart />}
+               size='sm'
               onClick={onToggleWishlist}
               colorScheme={isWishlisted ? "red" : "gray"} // Change color if wishlisted
             />
-            <Button onClick={onOpen}>Open Modal</Button>
           </ButtonGroup>
         </Flex>
       </CardFooter>
