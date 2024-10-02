@@ -6,20 +6,23 @@ import { CartProvider } from './state/context/CartContext.tsx';
 import HomePage from './pages/HomePage.tsx';
 import CartPage from './pages/CartPage.tsx';
 import ProductPage from './pages/ProductPage.tsx';
+import { WishlistProvider } from './state/context/WishListContext.tsx';
 
 function App() {
   return (
     <ChakraProvider>
       <CartProvider>
-        <Box p="6">
-          <Router>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/products" element={<ProductPage />} />
-              <Route path="/cart" element={<CartPage />} />
-            </Routes>
-          </Router>
-        </Box>
+        <WishlistProvider>
+          <Box p="6">
+            <Router>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/products" element={<ProductPage />} />
+                <Route path="/cart" element={<CartPage />} />
+              </Routes>
+            </Router>
+          </Box>
+        </WishlistProvider>
       </CartProvider>
     </ChakraProvider>
   );

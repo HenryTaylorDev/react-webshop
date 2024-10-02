@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardBody, CardFooter, Stack, Heading, Image, Text, Divider, ButtonGroup, Button, Flex, IconButton } from '@chakra-ui/react';
-import { IoMdAdd } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa";
 
 interface ProductCardProps {
@@ -8,37 +7,37 @@ interface ProductCardProps {
   description: string;
   price: number;
   image: string;
-  onBuy: () => void;       
-  onAddToCart: () => void; 
+  isWishlisted: boolean;
+  onOpen: () => void;
+  onAddToCart: () => void;
+  onToggleWishlist: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, description, price, image, onBuy, onAddToCart }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ title, description, price, image, isWishlisted, onOpen, onAddToCart, onToggleWishlist }) => {
   return (
-    <Card maxW='sm'>
+    <Card maxW="sm">
       <CardBody>
-        <Image
-          src={image}
-          alt={title}
-          borderRadius='lg'
-        />
-        <Stack mt='6' spacing='3'>
-          <Heading size='md'>{title}</Heading>
-          <Text>
-            {description}
-          </Text>
-          <Text color='blue.600' fontSize='2xl'>
-            ${price}
-          </Text>
+        <Image src={image} alt={title} borderRadius="lg" />
+        <Stack mt="6" spacing="3">
+          <Heading size="md">{title}</Heading>
+          <Text>{description}</Text>
+          <Text color="blue.600" fontSize="2xl">${price}</Text>
         </Stack>
       </CardBody>
       <Divider />
       <CardFooter>
         <Flex w="100%" justify="flex-end">
-          <ButtonGroup spacing='2'>
-            <Button variant='solid' colorScheme='blue' onClick={onBuy}>
+          <ButtonGroup spacing="2">
+            <Button variant="solid" colorScheme="blue" onClick={onAddToCart}>
               +
             </Button>
-            <IconButton aria-label='Add to wishlist' icon={<FaRegHeart />} onClick={onAddToCart} />
+            <IconButton
+              aria-label="Toggle wishlist"
+              icon={<FaRegHeart />}
+              onClick={onToggleWishlist}
+              colorScheme={isWishlisted ? "red" : "gray"} // Change color if wishlisted
+            />
+            <Button onClick={onOpen}>Open Modal</Button>
           </ButtonGroup>
         </Flex>
       </CardFooter>

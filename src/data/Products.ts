@@ -92,4 +92,22 @@ export const products: Product[] = [
     image:
       'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/421a0f94-e5b8-4447-87dd-ce56b26aea1a/NIKE+P-6000.png',
   },
+  {
+    id: 11,
+    name: 'Nike Air Huarache',
+    price: 130.0,
+    description:
+      'Nike Air Huarache delivers a snug fit and modern comfort with its unique design and flexibility.',
+    image:
+      'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/eb4ac99e-0d74-47e4-bc60-4d3c8e1fec23/NIKE+AIR+MAX+VERSE.png',
+  },
+  {
+    id: 12,
+    name: 'Nike LeBron 18',
+    price: 200.0,
+    description:
+      'Nike LeBron 18 combines cushioning and support to meet the needs of powerful players like LeBron James.',
+    image:
+      'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/eea89c37-c9ad-419b-abeb-e0d3ca8ddaf4/NIKE+AIR+MAX+PULSE.png',
+  },
 ];
